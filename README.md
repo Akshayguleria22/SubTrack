@@ -1,42 +1,63 @@
-# Subscription Tracker 🚀
+# Subscription Tracker Backend 🚀
 
-This is the Pure backend project called **Subscription Tracker App**, helping users manage and track all their subscriptions in one place.
+This is the backend API for the **Subscription Tracker App**, which helps users track and manage all their subscriptions in one place — complete with automated email reminders.
 
 ---
 
 ## ✨ Features
+
 ✅ **User Authentication**
 - Sign up, sign in, and sign out securely using JWT & bcrypt
-- Arcjet integration for bot detection and rate limiting
+- Secure password hashing with bcrypt
 
 ✅ **Subscription Management**
-- Users can add new subscriptions (like Netflix, Spotify, etc.)
-- Fetch all their subscriptions
-- Update or delete subscriptions
+- Users can add, view, update, and delete their subscriptions (like Netflix, Spotify, etc.)
+- Each subscription includes name, amount, and renewal date.
 
-✅ **Security**
-- Uses Arcjet for advanced bot protection and rate limiting
-- Encrypted passwords (bcrypt)
-- JSON Web Tokens (JWT) for secure sessions
+✅ **Email Workflows**
+- Automatically sends reminder emails to users **before their subscription renewals.**
+- Helps users avoid missed payments and stay on top of their finances.
+
+✅ **Security & Rate Limiting**
+- Integrated with Arcjet for bot detection and rate limiting.
+- Prevents abuse and protects your API.
 
 ✅ **Deployed on Render**
-- Runs on Render for easy deployment and scalability
-- Connected to MongoDB Atlas for database storage
+- Live and scalable deployment using Render connected to MongoDB Atlas.
 
 ---
 
 ## 🚀 Tech Stack
-- **Node.js + Express** — for building REST APIs
-- **MongoDB + Mongoose** — for storing user & subscription data
-- **JWT & bcrypt** — for authentication and password security
-- **Arcjet** — for bot detection & rate limiting
-- **Render** — for deployment
 
-## 🚀 Future Enhancements
-Payment reminders & email notifications
+- ⚙️ **Node.js + Express** — API server
+- 🗄 **MongoDB + Mongoose** — stores users & subscriptions
+- 🔐 **JWT + bcrypt** — authentication & password security
+- 📧 **Nodemailer / Resend (or your provider)** — sends automated emails
+- 🛡 **Arcjet** — bot protection and rate limiting
+- 🚀 **Render** — deployment
 
-Analytics dashboard for monthly spending
+---
 
-Multi-user household plans
+## ⚙️ Environment Setup
 
-Stripe integration
+Create a `.env` file in your project root:
+
+```env
+PORT=3000
+
+# Database
+URL=mongodb+srv://<username>:<password>@cluster.mongodb.net/subscription_tracker
+
+# JWT secrets
+JWT_SECRET=your_jwt_secret
+JWT_EXPIRES_IN=1d
+
+# Arcjet
+ARCJET_KEY=arc_live_xxxxxxxxxx
+
+# Email provider
+EMAIL_USER=youremail@example.com
+EMAIL_PASS=your-email-password-or-app-password
+
+# Environment
+NODE_ENV=development
