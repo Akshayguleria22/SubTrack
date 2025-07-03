@@ -1,5 +1,5 @@
 import mongoose from 'mongoose'
-import { URL, NODE_ENV } from '../config/env.js'
+import { URL } from '../config/env.js'
 
 if (!URL) {
     console.error('Please define the Database URL');
@@ -8,7 +8,7 @@ if (!URL) {
 
 const connect = async () => {
     try {
-        await mongoose.connect(URL, {
+        await mongoose.connect('mongodb+srv://akshayguleria700:A1k2s3h4a5y6@cluster0.rmyuwxd.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
             useNewUrlParser: true,
             useUnifiedTopology: true,
             serverSelectionTimeoutMS: 5000, // fail after 5 sec if cannot connect
