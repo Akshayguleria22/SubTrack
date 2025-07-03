@@ -1,6 +1,6 @@
-# Subscription Tracker Backend 🚀
+# Subscription Tracker🚀
 
-This is the backend API for the **Subscription Tracker App**, which helps users track and manage all their subscriptions in one place — complete with automated email reminders.
+This is the pure backend project of **Subscription Tracker App**, which helps users track and manage all their subscriptions in one place — complete with automated email reminders.
 
 ---
 
