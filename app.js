@@ -8,6 +8,7 @@ import errorMiddleware from './middlewares/error.middlewares.js'
 import cors from 'cors'
 import cookieParser from 'cookie-parser'
 import arcjetMiddleware from './middlewares/arcjet.middlewares.js'
+import workflowRouter from './routes/workflow.routes.js'
 
 
 
@@ -28,6 +29,7 @@ app.use(arcjetMiddleware)
 app.use('/api/v1/auth', authrouter)
 app.use('/api/v1/users', userRouter)
 app.use('/api/v1/subscription', subRoutes)
+app.use('api/v1/workflows', workflowRouter)
 
 
 //error handles
